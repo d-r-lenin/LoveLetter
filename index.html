@@ -1,0 +1,683 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Richard & Merlin ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink:#f8dce5;
+  --yellow:#fff0b9;
+  --purple:#e8dff5;
+  --blue:#dceffa;
+  --peach:#ffe1d2;
+  --cream:#fff9f0;
+  --brown:#62483f;
+  --muted:#92766d;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Nunito',sans-serif;
+  background:var(--cream);
+  color:var(--brown);
+  overflow-x:hidden;
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+  font-weight:500;
+}
+
+.hand{
+  font-family:'Caveat',cursive;
+  font-size:27px;
+}
+
+section{
+  padding:90px 20px;
+  text-align:center;
+  position:relative;
+}
+
+.container{
+  max-width:950px;
+  margin:auto;
+}
+
+.tag{
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+.heart{
+  color:#db849c;
+}
+
+.doodle{
+  position:absolute;
+  pointer-events:none;
+  font-size:35px;
+  opacity:.65;
+  animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%,100%{transform:translateY(0) rotate(-5deg)}
+  50%{transform:translateY(-12px) rotate(8deg)}
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 18px;
+  background:
+    radial-gradient(circle at 10% 15%,#f8dce5 0,transparent 25%),
+    radial-gradient(circle at 90% 80%,#dceffa 0,transparent 28%),
+    radial-gradient(circle at 85% 10%,#fff0b9 0,transparent 22%),
+    var(--cream);
+}
+
+.hero-card{
+  max-width:700px;
+  width:100%;
+  background:rgba(255,255,255,.72);
+  border:2px dashed #e6b9c2;
+  border-radius:35px;
+  padding:45px 25px;
+  position:relative;
+  box-shadow:0 15px 45px rgba(120,80,80,.07);
+}
+
+.hero h1{
+  font-size:clamp(43px,8vw,76px);
+  line-height:1.1;
+  margin:22px 0;
+}
+
+.hero-names{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(26px,5vw,42px);
+  line-height:1.5;
+}
+
+.hero-names span{
+  color:#d98ca2;
+  font-style:italic;
+}
+
+.hero-note{
+  font-family:'Caveat',cursive;
+  font-size:27px;
+  color:#a17d7d;
+  margin:12px 0 25px;
+}
+
+.hero-date{
+  display:inline-block;
+  background:var(--yellow);
+  padding:12px 22px;
+  border-radius:30px;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.hero-location{
+  margin-top:17px;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.open-button{
+  border:0;
+  background:#e9aabd;
+  color:#fff;
+  padding:14px 25px;
+  border-radius:30px;
+  font-family:'Nunito',sans-serif;
+  font-weight:800;
+  cursor:pointer;
+  margin-top:28px;
+  transition:.3s;
+}
+
+.open-button:hover{
+  transform:scale(1.06);
+  background:#d98da4;
+}
+
+.invitation{
+  display:none;
+}
+
+.invitation.show{
+  display:block;
+  animation:reveal .8s ease;
+}
+
+@keyframes reveal{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* COUNTDOWN */
+
+.countdown{
+  background:var(--pink);
+}
+
+h2{
+  font-size:clamp(35px,6vw,52px);
+  margin:15px 0;
+}
+
+.description{
+  font-family:'Caveat',cursive;
+  font-size:25px;
+  color:var(--muted);
+  margin:12px 0 30px;
+}
+
+.timer{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-top:35px;
+}
+
+.time-box{
+  width:110px;
+  background:#fffaf5;
+  border-radius:20px;
+  padding:20px 10px;
+  box-shadow:0 5px 15px rgba(120,70,70,.06);
+}
+
+.number{
+  font-family:'Playfair Display',serif;
+  font-size:43px;
+  color:#b66e85;
+  font-variant-numeric:tabular-nums;
+}
+
+.unit{
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* EVENTS */
+
+.events{
+  background:var(--cream);
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  margin-top:40px;
+}
+
+.event-card{
+  padding:35px 24px;
+  border-radius:28px;
+  border:2px dashed #e5c4b9;
+  transition:.3s;
+}
+
+.event-card:hover{
+  transform:translateY(-7px) rotate(-.5deg);
+}
+
+.wedding-card{background:var(--purple)}
+.reception-card{background:var(--yellow)}
+
+.event-icon{
+  font-size:36px;
+  margin-bottom:15px;
+}
+
+.event-card h3{
+  font-size:35px;
+  margin-bottom:12px;
+}
+
+.event-time{
+  display:inline-block;
+  background:rgba(255,255,255,.7);
+  padding:9px 16px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.event-card p{
+  margin-top:20px;
+  font-size:14px;
+  line-height:1.9;
+  color:#79645d;
+}
+
+.event-card strong{
+  color:var(--brown);
+}
+
+.map-button{
+  display:inline-block;
+  margin-top:22px;
+  background:#fffaf4;
+  padding:12px 20px;
+  border-radius:25px;
+  color:var(--brown);
+  text-decoration:none;
+  font-size:12px;
+  font-weight:800;
+  transition:.3s;
+}
+
+.map-button:hover{
+  background:#e9aabd;
+  color:white;
+}
+
+/* CLOSING */
+
+.closing{
+  background:var(--blue);
+}
+
+.closing-box{
+  max-width:700px;
+  margin:auto;
+  background:rgba(255,255,255,.7);
+  padding:50px 25px;
+  border-radius:35px;
+  border:2px dashed #aacbdf;
+}
+
+.closing-message{
+  font-family:'Playfair Display',serif;
+  font-size:21px;
+  line-height:1.8;
+  color:var(--muted);
+  margin:25px 0;
+}
+
+.signature{
+  font-family:'Caveat',cursive;
+  font-size:38px;
+  color:#b66e85;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:25px;
+  background:#62483f;
+  color:#fff4e9;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+/* FLOATING HEARTS */
+
+.floating-heart{
+  position:fixed;
+  bottom:-30px;
+  color:#dc91a8;
+  font-size:20px;
+  pointer-events:none;
+  z-index:10;
+  animation:rise 6s linear forwards;
+}
+
+@keyframes rise{
+  to{
+    transform:translateY(-110vh) rotate(35deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:650px){
+  .event-grid{grid-template-columns:1fr}
+  .hero-card{padding:40px 18px}
+  section{padding:70px 17px}
+  .time-box{width:75px;padding:15px 5px}
+  .number{font-size:32px}
+  .unit{font-size:9px;letter-spacing:1px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<header class="hero">
+
+  <span class="doodle" style="top:8%;left:8%">♡</span>
+  <span class="doodle" style="top:15%;right:9%">✿</span>
+  <span class="doodle" style="bottom:12%;left:10%">✧</span>
+  <span class="doodle" style="bottom:15%;right:8%">♡</span>
+
+  <div class="hero-card">
+
+    <div class="tag">A little love story is unfolding...</div>
+
+    <h1>You're Invited<br>to Our Happily Ever After!</h1>
+
+    <div style="font-size:40px">💌</div>
+
+    <div class="invitation" id="invitation">
+
+      <div class="hero-names">
+        Richard Lenin<br>
+        <span>&</span><br>
+        Merlin Jone
+      </div>
+
+      <div class="hero-note">
+        Our favourite adventure starts here ♡
+      </div>
+
+      <div class="hero-date">
+        Sunday · 31 January 2027
+      </div>
+
+      <div class="hero-location">
+        Sathyamangalam & Kabisthalam, Thanjavur
+      </div>
+
+      <p class="description" style="margin-top:25px">
+        Two hearts, one big adventure!
+      </p>
+
+    </div>
+
+    <button class="open-button" id="openBtn" onclick="openInvitation()">
+      Open Your Invitation ♡
+    </button>
+
+  </div>
+</header>
+
+
+<!-- COUNTDOWN -->
+
+<section class="countdown" id="countdown">
+
+  <span class="doodle" style="top:12%;left:7%">♡</span>
+  <span class="doodle" style="bottom:12%;right:8%">✧</span>
+
+  <div class="container">
+
+    <div class="tag">The big day is getting closer</div>
+
+    <h2>The Countdown to Forever!</h2>
+
+    <p class="description">
+      Someone's getting married... and it's us! ♡
+    </p>
+
+    <div class="timer">
+
+      <div class="time-box">
+        <div class="number" id="days">00</div>
+        <div class="unit">Days</div>
+      </div>
+
+      <div class="time-box">
+        <div class="number" id="hours">00</div>
+        <div class="unit">Hours</div>
+      </div>
+
+      <div class="time-box">
+        <div class="number" id="minutes">00</div>
+        <div class="unit">Minutes</div>
+      </div>
+
+      <div class="time-box">
+        <div class="number" id="seconds">00</div>
+        <div class="unit">Seconds</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- WEDDING EVENTS -->
+
+<section class="events" id="events">
+
+  <div class="container">
+
+    <div class="tag">Save the date, save the hugs!</div>
+
+    <h2>Here's the Plan ♡</h2>
+
+    <p class="description">
+      Two special moments. One unforgettable day.
+    </p>
+
+    <div class="event-grid">
+
+      <!-- WEDDING -->
+
+      <div class="event-card wedding-card">
+
+        <div class="event-icon">💍</div>
+
+        <h3>First Comes Love</h3>
+
+        <div class="event-time">
+          4:00 AM – 6:00 AM
+        </div>
+
+        <p>
+          <strong>St. Sebastian's Church</strong><br>
+          (Punitha Sebasthiyar Aalayam)<br>
+          Sathyamangalam, Thanjavur
+        </p>
+
+        <p>
+          A little prayer, a thousand promises,
+          and one beautiful forever. Join us as
+          we say our vows and begin this new chapter together.
+        </p>
+
+        <a class="map-button"
+           href="https://maps.app.goo.gl/U665kyRLDNbwDCa78"
+           target="_blank"
+           rel="noopener">
+          📍 Find Us Here
+        </a>
+
+      </div>
+
+
+      <!-- RECEPTION -->
+
+      <div class="event-card reception-card">
+
+        <div class="event-icon">🎉</div>
+
+        <h3>Then Comes Party!</h3>
+
+        <div class="event-time">
+          9:00 AM Onwards
+        </div>
+
+        <p>
+          <strong>RS Mahal</strong><br>
+          Kabisthalam, Thanjavur
+        </p>
+
+        <p>
+          Good food, happy hearts, endless laughter
+          and all our favourite people in one place.
+          We can't wait to celebrate with you!
+        </p>
+
+        <a class="map-button"
+           href="https://www.google.com/maps/search/?api=1&query=RS+Mahal+Kabisthalam+Thanjavur"
+           target="_blank"
+           rel="noopener">
+          📍 Find Us Here
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CLOSING -->
+
+<section class="closing">
+
+  <div class="closing-box">
+
+    <div class="tag">A little note from us</div>
+
+    <h2>Our Day Wouldn't Be Complete Without You!</h2>
+
+    <p class="closing-message">
+      From our first hello to our forever,
+      this journey has been filled with beautiful moments.
+
+      Now, we're getting ready to begin our biggest
+      adventure yet.
+
+      We saved a little space in our celebration just for you.
+
+      Come with your smiles, blessings and lots of love!
+    </p>
+
+    <div class="signature">
+      Lots of love,<br>
+      Richard & Merlin ♡
+    </div>
+
+    <div style="font-size:35px;margin-top:20px">
+      🌷 💗 ✨
+    </div>
+
+  </div>
+
+</section>
+
+
+<footer>
+  MADE WITH LOVE ♡ RICHARD & MERLIN · 31.01.2027
+</footer>
+
+
+<script>
+
+// OPEN INVITATION
+
+function openInvitation(){
+
+  document.getElementById("invitation")
+    .classList.add("show");
+
+  document.getElementById("openBtn")
+    .style.display="none";
+
+  for(let i=0;i<12;i++){
+    setTimeout(createHeart,i*100);
+  }
+
+}
+
+
+// LIVE COUNTDOWN - INDIA TIME
+
+const weddingDate =
+  new Date("2027-01-31T04:00:00+05:30").getTime();
+
+function updateCountdown(){
+
+  const now = Date.now();
+  const distance = weddingDate-now;
+
+  if(distance<=0){
+
+    ["days","hours","minutes","seconds"]
+      .forEach(id=>{
+        document.getElementById(id).textContent="00";
+      });
+
+    return;
+  }
+
+  const days=Math.floor(distance/86400000);
+
+  const hours=Math.floor(
+    (distance%86400000)/3600000
+  );
+
+  const minutes=Math.floor(
+    (distance%3600000)/60000
+  );
+
+  const seconds=Math.floor(
+    (distance%60000)/1000
+  );
+
+  document.getElementById("days").textContent=days;
+  document.getElementById("hours").textContent=String(hours).padStart(2,"0");
+  document.getElementById("minutes").textContent=String(minutes).padStart(2,"0");
+  document.getElementById("seconds").textContent=String(seconds).padStart(2,"0");
+
+}
+
+updateCountdown();
+setInterval(updateCountdown,1000);
+
+
+// FLOATING HEART ANIMATION
+
+function createHeart(){
+
+  const heart=document.createElement("div");
+
+  heart.className="floating-heart";
+  heart.textContent=["♡","♥","💕","✧"][Math.floor(Math.random()*4)];
+
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(4+Math.random()*3)+"s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(()=>heart.remove(),7000);
+
+}
+
+setInterval(createHeart,1800);
+
+</script>
+
+</body>
+</html>
